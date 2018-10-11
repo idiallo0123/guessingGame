@@ -7,6 +7,6 @@ public class Main
 
     public static void main(String[] args)
     {
-	    System.out.println(guessingGame1.guessingGame1(15));
+	    guessingGame.linearGuessing(7);
     }
 }
