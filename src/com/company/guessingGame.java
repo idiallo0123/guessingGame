@@ -28,13 +28,31 @@ public class guessingGame
         Scanner input = new Scanner(System.in);
         ans = input.nextInt();
         //Tell the computer if it's guess is 'too high', 'too low', or if it is 'correct'
-        int guess;
+        int guess = 50;
         int max = 100;
         int min = 1;
+        String response;
         while(ans != guess)
         {
-            int guess = (int) Math.random() * 101;
+            System.out.println("Max is "+ max);
+            System.out.println("Min is "+ min);
             System.out.println("Beep boop I guess: "+ guess);
+            Scanner input2 = new Scanner(System.in);
+            response = input2.nextLine();
+            if(response.equals("too high"))
+            {
+                max = guess;
+                guess = ((max-min)/2 + min);
+            }
+            if(response.equals("too low"))
+            {
+                min = guess;
+                guess = ((max-min)/2 + min);
+            }
+        }
+        if(guess == ans)
+        {
+            System.out.println("I've got your number! The number is "+guess+"!");
         }
 
     }
